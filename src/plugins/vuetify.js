@@ -1,6 +1,6 @@
-import Vue from "vue";
-import Vuetify from "vuetify/lib";
-import colors from "vuetify/lib/util/colors";
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+import colors from 'vuetify/lib/util/colors';
 
 Vue.use(Vuetify);
 
@@ -21,16 +21,16 @@ export default new Vuetify({
         secondary: colors.grey.darken1,
         accent: colors.shades.black,
         error: colors.red.accent3,
-        background: colors.indigo.lighten5,
+        background: colors.indigo.lighten5
       },
       dark: {
         primary: colors.blue.lighten3,
-        background: colors.indigo.base,
+        background: colors.indigo.base
         // primary: colors.blueGrey.lighten3,
-      },
-    },
+      }
+    }
   },
   icons: {
-    iconfont: "md",
-  },
+    iconfont: 'md'
+  }
 });
