@@ -1,2 +1,2 @@
 # vue-test
-Test app creation with Vue.js, Vuex, Vuetify.
+Vue.js, Vuex, Vuetify app.
