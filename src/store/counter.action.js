@@ -1,3 +1,5 @@
-export const COUNTER_INC = 'increment';
-export const COUNTER_DEC = 'decrement';
-export const COUNTER_SET_INC = 'setIncrementalValue';
+export const GET_COUNTER = 'COUNTER';
+export const SET_COUNTER_INC = 'INCREMENT';
+export const SET_COUNTER_DEC = 'DECREMENT';
+export const SET_INCREMENT_VALUE = 'SET_INCREMENT_VALUE';
+export const GET_INCREMENT_VALUE = 'GET_INCREMENT_VALUE';

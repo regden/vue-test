@@ -5,7 +5,7 @@
       <v-tabs class="mb-5">
         <v-tab to="/counter/simple">Simple</v-tab>
         <v-tab to="/counter/vuex">VueX</v-tab>
-        <v-tab to="/counter/fullvuex">VueX (full)</v-tab>
+        <v-tab to="/counter/vuex2">VueX-2</v-tab>
       </v-tabs>
       <transition name="fade" mode="out-in">
         <router-view></router-view>

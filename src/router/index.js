@@ -2,9 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home';
 import Counter from '../views/Counter';
-import CounterSimple from '../views/Counter/Simple';
-import CounterVueX from '../views/Counter/VueX';
-import FullVueX from '../views/Counter/FullVueX';
+import CounterSimple from '../views/Counter/CounterSimple';
+import CounterVueX from '../views/Counter/CounterVueX';
+import CounterVueX2 from '../views/Counter/CounterVueX2';
 
 Vue.use(VueRouter);
 
@@ -20,7 +20,7 @@ const routes = [
       { path: '', redirect: 'simple' },
       { path: 'simple', component: CounterSimple },
       { path: 'vuex', component: CounterVueX },
-      { path: 'fullvuex', component: FullVueX }
+      { path: 'vuex2', component: CounterVueX2 }
     ]
   },
   {

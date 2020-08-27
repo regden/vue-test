@@ -7,12 +7,32 @@
         KEEPER
         <span class="font-weight-light">Offline</span>
       </span>
-      <v-text-field prepend-inner-icon="search" dense solo-inverted flat label="Search" hide-details></v-text-field>
+      <v-text-field
+        prepend-inner-icon="search"
+        dense
+        solo-inverted
+        flat
+        label="Search"
+        hide-details
+      ></v-text-field>
       <v-spacer></v-spacer>
-      <v-switch dense v-model="$vuetify.theme.dark" hide-details inset label></v-switch>
+      <v-switch
+        dense
+        v-model="$vuetify.theme.dark"
+        hide-details
+        inset
+        label
+      ></v-switch>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app clipped permanent hide-overlay width="300">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      clipped
+      permanent
+      hide-overlay
+      width="300"
+    >
       <drawer :nav="nav" :items="items"></drawer>
     </v-navigation-drawer>
 
