@@ -13,7 +13,13 @@
     ></v-text-field>
 
     <v-list>
-      <v-list-item link v-for="(page, i) in nav" :key="'nav' + i" :to="page.route" color="primary">
+      <v-list-item
+        link
+        v-for="(page, i) in nav"
+        :key="'nav' + i"
+        :to="page.route"
+        color="primary"
+      >
         <v-list-item-icon>
           <v-icon>{{ page.icon }}</v-icon>
         </v-list-item-icon>
@@ -40,13 +46,13 @@ export default {
   props: {
     items: {
       type: Array,
-      required: true
+      required: true,
     },
     nav: {
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

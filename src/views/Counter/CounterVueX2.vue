@@ -17,10 +17,13 @@
         x-large
         color="red"
         outlined
-        @click="addCounter({decrement: true})"
+        @click="addCounter({ decrement: true })"
         class="mr-5"
-      >Decrement</v-btn>
-      <v-btn x-large color="green" outlined @click="addCounter()">Increment</v-btn>
+        >Decrement</v-btn
+      >
+      <v-btn x-large color="green" outlined @click="addCounter()"
+        >Increment</v-btn
+      >
     </v-card-text>
   </v-card>
 </template>
@@ -40,22 +43,21 @@ export default {
   computed: {
     ...mapGetters({
       counter: `${store}/${GET}`,
-      incrementValue: `${store}/${GET_INCREMENT}`
-    })
+      incrementValue: `${store}/${GET_INCREMENT}`,
+    }),
   },
   methods: {
     ...mapActions({
       addCounter: `${store}/${SET}`,
-      setIncrement: `${store}/${SET_INCREMENT}`
-    })
+      setIncrement: `${store}/${SET_INCREMENT}`,
+    }),
   },
   watch: {
     sliderValue: function(val) {
       this.setIncrement(val);
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

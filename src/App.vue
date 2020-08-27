@@ -7,12 +7,32 @@
         KEEPER
         <span class="font-weight-light">Offline</span>
       </span>
-      <v-text-field prepend-inner-icon="search" dense solo-inverted flat label="Search" hide-details></v-text-field>
+      <v-text-field
+        prepend-inner-icon="search"
+        dense
+        solo-inverted
+        flat
+        label="Search"
+        hide-details
+      ></v-text-field>
       <v-spacer></v-spacer>
-      <v-switch dense v-model="$vuetify.theme.dark" hide-details inset label></v-switch>
+      <v-switch
+        dense
+        v-model="$vuetify.theme.dark"
+        hide-details
+        inset
+        label
+      ></v-switch>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app clipped permanent hide-overlay width="300">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      clipped
+      permanent
+      hide-overlay
+      width="300"
+    >
       <drawer :nav="nav" :items="items"></drawer>
     </v-navigation-drawer>
 
@@ -32,15 +52,15 @@ export default {
     drawer: true,
     items: [
       { icon: 'lightbulb', text: 'Notes' },
-      { icon: 'settings', text: 'Parameters' }
+      { icon: 'settings', text: 'Parameters' },
     ],
     nav: [
       { icon: 'home', text: 'Home', route: '/' },
       { icon: 'person', text: 'About', route: '/about' },
-      { icon: 'exposure_plus_1', text: 'Counter', route: '/counter' }
-    ]
+      { icon: 'exposure_plus_1', text: 'Counter', route: '/counter' },
+    ],
   }),
-  components: { drawer }
+  components: { drawer },
 };
 </script>
 

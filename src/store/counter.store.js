@@ -8,7 +8,7 @@ export const CounterStore = {
   state: { counter: 0, incrementValue: 3 },
   mutations: {
     [SET]: (state, payload) => (state.counter += payload),
-    [SET_INCREMENT]: (state, payload) => (state.incrementValue = payload)
+    [SET_INCREMENT]: (state, payload) => (state.incrementValue = payload),
   },
   actions: {
     [SET]: ({ commit, getters }, payload) => {
@@ -19,10 +19,10 @@ export const CounterStore = {
     },
     [SET_INCREMENT]: ({ commit }, payload) => {
       commit(SET_INCREMENT, payload);
-    }
+    },
   },
   getters: {
     [GET]: state => state.counter,
-    [GET_INCREMENT]: state => state.incrementValue
-  }
+    [GET_INCREMENT]: state => state.incrementValue,
+  },
 };

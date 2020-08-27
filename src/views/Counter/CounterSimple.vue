@@ -13,8 +13,12 @@
         hint="Change increment step"
         persistent-hint
       ></v-slider>
-      <v-btn x-large color="red" outlined @click="decrement()" class="mr-5">Decrement</v-btn>
-      <v-btn x-large color="green" outlined @click="increment()">Increment</v-btn>
+      <v-btn x-large color="red" outlined @click="decrement()" class="mr-5"
+        >Decrement</v-btn
+      >
+      <v-btn x-large color="green" outlined @click="increment()"
+        >Increment</v-btn
+      >
     </v-card-text>
   </v-card>
 </template>
@@ -29,8 +33,8 @@ export default {
     },
     increment: function() {
       this.counter += this.incrementValue;
-    }
-  }
+    },
+  },
 };
 </script>
 
