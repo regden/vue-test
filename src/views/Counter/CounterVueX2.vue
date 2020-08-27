@@ -13,25 +13,23 @@
         hint="Change increment step"
         persistent-hint
       ></v-slider>
-      <v-btn x-large color="red" outlined @click="decrement()" class="mr-5"
-        >Decrement</v-btn
-      >
-      <v-btn x-large color="green" outlined @click="increment()"
-        >Increment</v-btn
-      >
+      <v-btn
+        x-large
+        color="red"
+        outlined
+        @click="addCounter({decrement: true})"
+        class="mr-5"
+      >Decrement</v-btn>
+      <v-btn x-large color="green" outlined @click="addCounter()">Increment</v-btn>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-import {
-  GET_COUNTER,
-  SET_COUNTER_INC,
-  SET_COUNTER_DEC,
-  SET_INCREMENT_VALUE,
-  GET_INCREMENT_VALUE
-} from '@/store/counter.action';
+import { GET, SET, GET_INCREMENT, SET_INCREMENT } from '@/store/counter.store';
 import { mapActions, mapGetters } from 'vuex';
+
+const store = 'CounterStore';
 
 export default {
   name: 'CounterX2',
@@ -41,23 +39,23 @@ export default {
   },
   computed: {
     ...mapGetters({
-      counter: GET_COUNTER,
-      incrementValue: GET_INCREMENT_VALUE
+      counter: `${store}/${GET}`,
+      incrementValue: `${store}/${GET_INCREMENT}`
     })
   },
   methods: {
     ...mapActions({
-      increment: SET_COUNTER_INC,
-      decrement: SET_COUNTER_DEC,
-      setIncrementValue: SET_INCREMENT_VALUE
+      addCounter: `${store}/${SET}`,
+      setIncrement: `${store}/${SET_INCREMENT}`
     })
   },
   watch: {
     sliderValue: function(val) {
-      this.setIncrementValue(val);
+      this.setIncrement(val);
     }
   }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>

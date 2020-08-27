@@ -17,33 +17,29 @@
         x-large
         color="red"
         outlined
-        @click="decrement(incrementValue)"
+        @click="addCounter( { value: incrementValue, decrement: true} )"
         class="mr-5"
-        >Decrement</v-btn
-      >
-      <v-btn x-large color="green" outlined @click="increment(incrementValue)"
-        >Increment</v-btn
-      >
+      >Decrement</v-btn>
+      <v-btn x-large color="green" outlined @click="addCounter({ value: incrementValue})">Increment</v-btn>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-import {
-  SET_COUNTER_INC,
-  SET_COUNTER_DEC,
-  GET_COUNTER
-} from '@/store/counter.action';
+import { GET, SET } from '@/store/counter.store';
 import { mapActions, mapGetters } from 'vuex';
+
+const COUNTER_STORE = 'CounterStore';
 
 export default {
   name: 'CounterX',
   data: () => ({ incrementValue: 5 }),
-  computed: { ...mapGetters({ counter: GET_COUNTER }) },
+  computed: { ...mapGetters({ counter: `${COUNTER_STORE}/${GET}` }) },
   methods: {
-    ...mapActions({ increment: SET_COUNTER_INC, decrement: SET_COUNTER_DEC })
+    ...mapActions({ addCounter: `${COUNTER_STORE}/${SET}` })
   }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>
