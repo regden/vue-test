@@ -1,10 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home';
-import Counter from '../views/Counter';
-import CounterSimple from '../views/Counter/CounterSimple';
-import CounterVueX from '../views/Counter/CounterVueX';
-import CounterVueX2 from '../views/Counter/CounterVueX2';
+import About from '../views/About';
 
 Vue.use(VueRouter);
 
@@ -15,21 +12,36 @@ const routes = [
   },
   {
     path: '/counter',
-    component: Counter,
+    component: () =>
+      import(/* webpackChunkName: "counter" */ '../views/Counter'),
     children: [
       { path: '', redirect: 'simple' },
-      { path: 'simple', component: CounterSimple },
-      { path: 'vuex', component: CounterVueX },
-      { path: 'vuex2', component: CounterVueX2 },
+      {
+        path: 'simple',
+        component: () =>
+          import(
+            /* webpackChunkName: "counter" */ '../views/Counter/CounterSimple'
+          ),
+      },
+      {
+        path: 'vuex',
+        component: () =>
+          import(
+            /* webpackChunkName: "counter" */ '../views/Counter/CounterVueX'
+          ),
+      },
+      {
+        path: 'vuex2',
+        component: () =>
+          import(
+            /* webpackChunkName: "counter" */ '../views/Counter/CounterVueX2'
+          ),
+      },
     ],
   },
   {
     path: '/about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: About,
   },
 ];
 

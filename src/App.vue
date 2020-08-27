@@ -16,13 +16,7 @@
         hide-details
       ></v-text-field>
       <v-spacer></v-spacer>
-      <v-switch
-        dense
-        v-model="$vuetify.theme.dark"
-        hide-details
-        inset
-        label
-      ></v-switch>
+      <v-switch dense v-model="darkMode" hide-details inset label></v-switch>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -50,6 +44,7 @@ import drawer from '@/components/Drawer';
 export default {
   data: () => ({
     drawer: true,
+    darkMode: false,
     items: [
       { icon: 'lightbulb', text: 'Notes' },
       { icon: 'settings', text: 'Parameters' },
@@ -60,6 +55,15 @@ export default {
       { icon: 'exposure_plus_1', text: 'Counter', route: '/counter' },
     ],
   }),
+  mounted: function() {
+    this.darkMode = localStorage.getItem('darkMode') === 'true';
+  },
+  watch: {
+    darkMode: function() {
+      this.$vuetify.theme.dark = this.darkMode;
+      localStorage.setItem('darkMode', this.darkMode);
+    },
+  },
   components: { drawer },
 };
 </script>
